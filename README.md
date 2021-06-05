@@ -12,6 +12,10 @@ Esse projeto foi construído utilizando as ferramentas:
 - Angular 8;
 - Visual Studio 2019
 
+## Observações
+
+- O Script do Banco de Dados pode ser encontrado na pasta Documentos, ou no [link](https://github.com/deborapesantos/crud-produto-angular-aspnetcore/blob/main/Documentation/DeboraSantos_CreateScript_CrudProdutoDB.sql).
+
 
 ## Entendendo algumas classes do projeto (Back-end)
 
