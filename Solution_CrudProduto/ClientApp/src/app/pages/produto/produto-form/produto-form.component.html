@@ -1,0 +1,42 @@
+<body>
+  <app-nav-menu></app-nav-menu>
+
+  <div class="container">
+    <div class="row ">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/produto']">Listagem de produtos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cadastro de produto</li>
+          </ol>
+        </nav>
+        <h4>Cadastro de Produtos</h4>
+        <br />
+        <form class="box-white" (ngSubmit)="save()">
+
+          <div class="form-group">
+            <label>Nome do produto</label>
+            <input type="text" class="form-control" [(ngModel)]="produto.Nome" name="nome" required/>
+          </div>
+
+          <div class="form-group">
+            <label>Valor do produto (R$)</label>
+            <input type="number" class="form-control" [(ngModel)]="produto.ValorVenda" name="valor" required/>
+          </div>
+
+          <div class="form-group">
+            <label>Imagem</label>
+            <app-file-image-upload (changeImgData)="getImageData($event)" [model]="produto.PathImagem" [options]="imgUploasOptions" style="width: 100%;" class="margin-bottom-15"></app-file-image-upload>
+
+
+          </div>
+          <div class="btn-toolbar justify-content-between">
+            <button class="btn btn-outline-primary pull-right" type="submit">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+

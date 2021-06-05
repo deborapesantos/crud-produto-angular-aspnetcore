@@ -1,0 +1,40 @@
+body {
+  background-color: #f2f2f2 !important;
+}
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.btn-principal {
+  background-color: #00D0FF !important;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.form-control {
+  height: 50px;
+  border-radius: 7px;
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+}
+
+.form-control.ng-invalid{
+    border-color:red;
+}
+
+.box-white {
+  background-color: #fff;
+  border-radius: 10px;
+  border-color: transparent;
+}

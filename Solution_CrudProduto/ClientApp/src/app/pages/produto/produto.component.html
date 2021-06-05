@@ -1,0 +1,35 @@
+<body>
+  <app-nav-menu></app-nav-menu>
+  <div class="container">
+    <div class="btn-toolbar justify-content-between">
+      <h3>Produtos</h3>
+      <button class="btn btn-primary btn-sm me-md-2 " type="button" (click)="openForm(item)">Adicionar</button>
+    </div>
+  </div>
+  <br />
+    <div class="container">
+      <center>
+        <p *ngIf="!listaProduto"><em>Carregando dados...</em></p>
+      </center>
+      <div class="row  row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+        <div class="col"
+             *ngFor="let item of listaProduto">
+          <div class="card box-white" >
+            <img src="{{item.pathImagem}}"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title">{{ item.nome }} </h6>
+              <p class="card-text">{{item.valorVenda | currency:'BRL' }}</p>
+              <div class="btn-toolbar justify-content-between">
+                <button class="btn btn-outline-danger btn-sm me-md-2 " type="button" (click)="delete(item)">Excluir</button>
+                <a [routerLink]="['/produto-form',item]" class="btn btn-outline-primary  btn-sm pull-right" type="button" >Editar</a>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+</body>
+

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <div style="    height: 145px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    padding: 5px">
+      <center> <img [src]="previewUrl" height="130" *ngIf="previewUrl" /></center>
+      <center> <img [src]="model" height="130" *ngIf="model && !previewUrl" style="max-width:95%" /></center>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      <label class="label-file btn btn-outline-primary" style="margin-top:20px" for="selecao-arquivo">
+        Selecionar uma imagem
+        <span *ngIf="success">
+          <i class=" text-success">&#10004; </i>
+        </span>
+        <span *ngIf="objError.isError">
+          <i class=" text-danger">&#10006; </i>
+        </span>
+      </label>
+      <input id="selecao-arquivo" type="file" [(NgModel)]="fileData" (change)="fileProgress($event)" name="image"><br />
+      <small><span class="text-danger" *ngIf="objError.isError">{{objError.mensagem}}</span></small>
+    </div>
+    
+    
+  </div>
+  
+
+</div>
+
