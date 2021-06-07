@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { APPSETTINGS } from './global-propertys';
 
 @Injectable({
@@ -12,7 +12,13 @@ export class BaseRequestService {
   constructor(private _httpClient: HttpClient) { }
 
   openExternRequest(method: string, url: string, model: any = null) {
-    var req = new HttpRequest(method, url, model, { reportProgress: false, responseType: "json" })
+    var header = new HttpHeaders()
+      .set('Authorization', "Basic MTEyMzQ1Njc4OTA6MDk4NzY1NDMyMTE=");
+
+    var req = new HttpRequest(method, url, model, {
+      reportProgress: false, responseType: "json", headers: header
+    })
+    
     return this._httpClient.request(req);
   }
 

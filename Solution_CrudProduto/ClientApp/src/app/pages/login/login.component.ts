@@ -36,11 +36,15 @@ export class LoginComponent implements OnInit {
     this.LoginDataService.login(this.user)
       .then(x => 
         x.subscribe((data: HttpResponse<LoginResponse>) => {
-          this.loginResponse = data.body;
-          if (this.loginResponse.success)
-            this.goToDashboard();
-          else
-          this.isError = true;
+          if (data.body) {
+            this.loginResponse = data.body;
+            if (this.loginResponse.success)
+              this.goToDashboard();
+            else
+              this.isError = true;
+          }
+
+         
         })
     )
       .catch(x => console.log(x))
